@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
-export default function GridComponent (){
-    return(
-        <div id='grid'>
-            <p>Test Card</p>
-        </div>
-    )
+export default function GridComponent() {
+  return (
+    <div id="grid">
+      <p>Test Card</p>
+    </div>
+  );
 }
