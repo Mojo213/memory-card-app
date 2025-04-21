@@ -1,9 +1,16 @@
 import { useState } from 'react';
 
-export default function HeaderComponent() {
+export default function HeaderComponent({ score, bestScore }) {
   return (
-    <div>
-      <h1>Header</h1>
+    <div id="header">
+      <div className="header-left-section">
+        <h1>Memory Card Game</h1>
+      </div>
+      <div className="header-right-section">
+        <div className="score">Score: {score}</div>
+        <div className="best-score">Best score: {bestScore}</div>
+      </div>
     </div>
   );
 }
+
