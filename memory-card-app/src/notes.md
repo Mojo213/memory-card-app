@@ -1,2 +1,4 @@
 lift up shared state. (currentScore, setScore + bestScore state, use that to determine best score(may use anothe state))
 use state score, in header. create async function that will request the data which will then be stored into an array. loop throught the array, create a card div(jsx) displaying the data. useEffect dependency array to monitor score. create a condition whereby if the same item in the array is selected more than once reset the score. also dont forget to use a randomiser for the array data eg sort(math.random() - 5) to shuffle array items everytime a card representing the array item is clicked.
+
+only update best score when mistake is made.
