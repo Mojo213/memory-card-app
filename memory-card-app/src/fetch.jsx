@@ -1,16 +1,20 @@
-async function grabCardData () {
+export default async function grabCardData () {
     const data = await fetch("https://dragonball-api.com/api/characters?limit=12");
-    return data.json();
+    const jsonData = await data.json();
+    return jsonData;
 }
 
-function extractCardArr (characters){
+export function extractCardArr (characters){
 const arrObj = characters.map(character =>
-({name : character.name, image : character.image}
+({id: character.id, 
+  name : character.name, 
+  image : character.image
+}
 ));
 return arrObj;
 }
 
-export default function shuffleCardData (dataArr) {
+export function shuffleCardData (dataArr) {
 const shuffled = dataArr.sort(() => Math.random() - 0.5);
 
 return shuffled

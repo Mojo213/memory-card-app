@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CardComponent from './grid.jsx';
+import GridComponent from './grid.jsx';
 import HeaderComponent from './header.jsx';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <h1>Outer div</h1>
       <HeaderComponent score={score} setScore={setScore}/>
-      <CardComponent score={score} setScore={setScore} />
+      <GridComponent score={score} setScore={setScore} />
     </div>
   );
 }
