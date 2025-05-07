@@ -6,7 +6,7 @@ function App() {
   const [score, setScore] = useState(0);
   return (
     <div className="App">
-      <h1>Outer div</h1>
+      <h1> DBZ Memory Card Game</h1>
       <HeaderComponent score={score} setScore={setScore}/>
       <GridComponent score={score} setScore={setScore} />
     </div>

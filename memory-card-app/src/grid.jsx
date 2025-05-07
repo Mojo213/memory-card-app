@@ -24,7 +24,7 @@ export default function GridComponent() {
   return (
     <div id="grid">
       {cards.map(character=> (
-          <div key={character.id}>
+          <div key={character.id} className='card'>
            <h1>{character.name}</h1>
            <img src={character.image} alt={character.name} style={{ width: '150px', height: '250px' }} />
           </div> 
