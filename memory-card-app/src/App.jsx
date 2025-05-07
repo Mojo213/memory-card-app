@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import GridComponent from './grid.jsx';
 import HeaderComponent from './header.jsx';
+import React from 'react';
 
 function App() {
   const [score, setScore] = useState(0);
