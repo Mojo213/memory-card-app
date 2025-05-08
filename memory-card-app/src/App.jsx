@@ -4,7 +4,7 @@ import HeaderComponent from './header.jsx';
 import React from 'react';
 
 function App() {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState([]);
   return (
     <div className="App">
       <h1> DBZ Memory Card Game</h1>
