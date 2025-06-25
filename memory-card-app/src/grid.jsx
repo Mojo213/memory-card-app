@@ -21,20 +21,17 @@ export default function GridComponent({ score, setScore }) {
     loadData();
   }, []);
 
- function reshuffled(card, data) {
-  const clonedCards = [...data];
-  const clickedId = card;
-  const shuffle = shuffleCardData(clonedCards);
-  trackScore(clickedId, clonedCards);
-  return setCard(shuffle);
- }
+  function reshuffled(clickedId, cards) {
+    trackScore(clickedId);
+    const shuffled = shuffleCardData([...cards]); 
+    setCard(shuffled);
+  }
 
- function trackScore (card, cards) {
- const currentScore = [...score];
- const clicked = card.id;
- if(!currentScore.includes(clicked)){
-  let updated = [...currentScore, clicked];
- setScore(updated)
+ function trackScore (clickedId) {
+  const alreadyClicked = score.includes(clickedId);
+
+ if(!alreadyClicked){
+  setScore([...score, clickedId])
  }else{
   setScore([]);
  }
@@ -43,7 +40,7 @@ export default function GridComponent({ score, setScore }) {
   return (
     <div id="grid">
       {cards.map(character=> (
-          <div key={character.id} className='card' onClick={(e)=>{let clickedCard = e.target.id; return reshuffled(clickedCard, cards)}}>
+          <div key={character.id} className='card' onClick={() => reshuffled(character.id, cards)}>
            <h1>{character.name}</h1>
            <img src={character.image} alt={character.name} style={{ width: '150px', height: '260px' }} />
           </div> 
