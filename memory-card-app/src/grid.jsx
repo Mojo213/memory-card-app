@@ -4,7 +4,7 @@ import grabCardData, { extractCardArr, shuffleCardData } from './fetch';
 
 
 
-export default function GridComponent({ score, setScore, bestScore, setBestScore}) {
+export default function GridComponent({ score, setScore, bestScore, setBestScore, setIsWon}) {
   const [cards, setCard] = useState([]);
 
   useEffect (()=> {
@@ -31,9 +31,20 @@ export default function GridComponent({ score, setScore, bestScore, setBestScore
   const alreadyClicked = score.includes(clickedId);
 
  if(!alreadyClicked){
-  setScore([...score, clickedId])
+  setScore(prevScore => {
+ let newScore = [...prevScore, clickedId];
+   
+ if (newScore.length === 12) {
+  if(12 > bestScore){ setBestScore(12)}
+  setIsWon(true);
+ }
+ return newScore;
+  });
+ 
  }else{
-  setBestScore(score.length)
+  if(score.length > bestScore){
+    setBestScore(score.length)
+  }
   setScore([]);
  }
  }

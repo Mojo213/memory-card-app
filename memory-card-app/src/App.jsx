@@ -6,6 +6,7 @@ import React from 'react';
 function App() {
   const [score, setScore] = useState([]);
   const [bestScore, setBestScore] = useState(0);
+  const [isWon, setIsWon] = useState(false);
   return (
     <div className="App">
       <h1> DBZ Memory Card Game</h1>
