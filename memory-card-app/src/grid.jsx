@@ -35,7 +35,6 @@ export default function GridComponent({ score, setScore, bestScore, setBestScore
  let newScore = [...prevScore, clickedId];
    
  if (newScore.length === 12) {
-  if(12 > bestScore){ setBestScore(12)}
   setIsWon(true);
  }
  return newScore;
